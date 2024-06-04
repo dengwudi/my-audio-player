@@ -4,12 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>播放音频</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <h1>点击播放音频</h1>
-  <audio controls>
+  <button onclick="playAudio()">点击播放音频</button>
+  <audio id="myAudio" controls style="display: none;">
     <source src="https://github.com/dengwudi/my-audio-player/raw/master/audio.mp3" type="audio/mp3">
     您的浏览器不支持音频元素。
   </audio>
+
+  <script>
+    function playAudio() {
+      var audio = document.getElementById("myAudio");
+      audio.style.display = "block";
+      audio.play();
+    }
+  </script>
 </body>
 </html>
